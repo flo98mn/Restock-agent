@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(pip install:*)",
+      "Read(./data/**)",
+      "Read(./context/**)",
+      "Write(./output/**)",
+      "Edit(./output/**)"
+    ],
+    "deny": []
+  }
+}

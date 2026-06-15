@@ -1,0 +1,12 @@
+.env
+data/reports/*.xlsx
+data/reports/*.csv
+data/cache/*
+output/stock_reports/*
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+!data/reports/.gitkeep
+!data/cache/.gitkeep
+!output/stock_reports/.gitkeep
