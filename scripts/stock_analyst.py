@@ -27,6 +27,12 @@ except ImportError:
     )
     sys.exit(1)
 
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 REPORT_GLOB = "Raport stoc 3.0_*.xlsx"
 DATE_RE = re.compile(r"(\d{4}_\d{2}_\d{2})")
 

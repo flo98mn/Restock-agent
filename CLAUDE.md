@@ -23,3 +23,15 @@ algoritmul complet sunt în context/business-context.md — citește-l înainte 
 ## Surse de date (v1, offline)
 - data/reports/Raport stoc 3.0_YYYY_MM_DD.xlsx → sheet-urile Stoc_viitor și Restock_tehnic.
 - Fără MCP, fără DB, fără endpoint live.
+
+## Rulare end-to-end
+Pipeline-ul v1 se rulează cu o singură comandă (orchestrare deterministă, fără pași LLM):
+
+    python scripts/run_pipeline.py
+
+Lanțuiește stock-analyst → restock-planner → report-writer, oprește la prima eroare și afișează
+calea fișierului final din output/stock_reports/. Pentru un raport anume:
+
+    python scripts/run_pipeline.py --report "data/reports/Raport stoc 3.0_YYYY_MM_DD.xlsx"
+
+Subagenții (.claude/agents/) rămân disponibili pentru rulare/validare individuală a unui pas.

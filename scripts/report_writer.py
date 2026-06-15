@@ -26,6 +26,12 @@ except ImportError:
     sys.stderr.write("openpyxl lipsește. Instalează: python -m pip install openpyxl\n")
     sys.exit(1)
 
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 DATE_RE = re.compile(r"(\d{4}_\d{2}_\d{2})")
 PLAN_GLOB = os.path.join("data", "cache", "restock_plan_*.json")
 

@@ -19,6 +19,12 @@ import re
 import sys
 from datetime import datetime, timezone
 
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 DATE_RE = re.compile(r"(\d{4}_\d{2}_\d{2})")
 DATASET_GLOB = os.path.join("data", "cache", "restock_dataset_*.json")
 
