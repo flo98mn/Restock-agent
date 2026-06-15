@@ -41,7 +41,10 @@ NORMAL (Baterie=0 și furnizor != Kaka):
   qty_aer  = ceil_to(max(0, v*60  - S - In), mult)             # punte 60 zile (transit tren)
   qty_tren = ceil_to(max(0, v*180 - S - In - qty_aer), mult)   # top-up la 180 (=60 transit +120 acoperire)
 
-BATERIE (Baterie=1):  # nu pe tren
+BATERIE (Baterie==1 SAU nume conține "powerbank"/"power bank"):  # nu pe tren
+  # NOTĂ v1: "acumulator"/"baterie" NU sunt cuvinte-cheie. Singurele produse "acumulator" sunt
+  # coșurile de gunoi, care merg pe TREN (acumulatorul se aduce separat pe aer, în afara fluxului).
+  # Când greutate_baterie va fi populată în DB, Baterie==1 devine sursa primară; keyword rămâne backup.
   qty_aer  = ceil_to(max(0, v*60 - S - In), mult)              # orizont aer 60 zile
   qty_tren = 0
 

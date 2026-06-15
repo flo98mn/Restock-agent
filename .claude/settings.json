@@ -2,6 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(python3:*)",
+      "Bash(python:*)",
       "Bash(pip install:*)",
       "Read(./data/**)",
       "Read(./context/**)",
